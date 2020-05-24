@@ -59,6 +59,7 @@ class App extends Component {
         <SearchResult
           trackData={trackData}
           handleSubmit={this.handleSubmit}
+          key={trackData.id}
         />
       )
     })

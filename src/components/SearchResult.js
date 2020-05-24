@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 const style = {
     margin: 15,
     padding: 5,
-    border: "1px black solid"
+    border: "1px black solid",
 };
 
 class SearchResult extends Component {
@@ -23,9 +23,9 @@ class SearchResult extends Component {
 
     render() {
         return (
-            <MuiThemeProvider>
+            <MuiThemeProvider >
                 <div>
-                    <Card style={style}>
+                    <Card style={style}  >
                         <CardContent>
                             <strong>Track Name:</strong> {this.props.trackData.name}
                         </CardContent>
