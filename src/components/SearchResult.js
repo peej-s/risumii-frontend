@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Link from '@material-ui/core/Link';
@@ -23,34 +22,32 @@ class SearchResult extends Component {
 
     render() {
         return (
-            <MuiThemeProvider >
-                <div>
-                    <Card style={style}  >
-                        <CardContent>
-                            <strong>Track Name:</strong> {this.props.trackData.name}
-                        </CardContent>
-                        <CardContent>
-                            <strong>Artists:</strong> {this.joinArtists(this.props.trackData.artists)}
-                        </CardContent>
-                        <CardContent>
-                            {this.props.trackData.preview_url ?
-                                <Link href={this.props.trackData.preview_url}>
-                                    Preview Song
+            <div>
+                <Card style={style}  >
+                    <CardContent>
+                        <strong>Track Name:</strong> {this.props.trackData.name}
+                    </CardContent>
+                    <CardContent>
+                        <strong>Artists:</strong> {this.joinArtists(this.props.trackData.artists)}
+                    </CardContent>
+                    <CardContent>
+                        {this.props.trackData.preview_url ?
+                            <Link href={this.props.trackData.preview_url}>
+                                Preview Song
                                 </Link> :
-                                "No Preview Available"
-                            }
-                        </CardContent>
-                        <CardContent>
-                            <Button
-                                onClick={(event) => this.props.handleSubmit(event, "recommend", this.props.trackData)}
-                                variant="contained"
-                            >
-                                Get Recommendations
+                            "No Preview Available"
+                        }
+                    </CardContent>
+                    <CardContent>
+                        <Button
+                            onClick={(event) => this.props.handleSubmit(event, "recommend", this.props.trackData)}
+                            variant="contained"
+                        >
+                            Get Recommendations
                             </Button>
-                        </CardContent>
-                    </Card>
-                </div>
-            </MuiThemeProvider>
+                    </CardContent>
+                </Card>
+            </div>
         )
     }
 }
